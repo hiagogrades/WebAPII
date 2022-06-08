@@ -10,9 +10,6 @@ namespace WebAPII.Controllers
     {
         [HttpGet]
         [Route(template: "ToDos")]
-        public List<ToDo> Get()
-        {
-            new List<ToDo>();
-        }
+        public List<ToDo> Get() => new List<ToDo>();
     }
 }

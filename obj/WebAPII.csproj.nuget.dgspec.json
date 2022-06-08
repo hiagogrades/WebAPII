@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\WebAPII\\WebAPII.csproj": {}
+    "C:\\dev\\WebAPII\\WebAPII.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\WebAPII\\WebAPII.csproj": {
+    "C:\\dev\\WebAPII\\WebAPII.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\WebAPII\\WebAPII.csproj",
+        "projectUniqueName": "C:\\dev\\WebAPII\\WebAPII.csproj",
         "projectName": "WebAPII",
-        "projectPath": "C:\\Dev\\WebAPII\\WebAPII.csproj",
+        "projectPath": "C:\\dev\\WebAPII\\WebAPII.csproj",
         "packagesPath": "C:\\Users\\hiago.werneck\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\WebAPII\\obj\\",
+        "outputPath": "C:\\dev\\WebAPII\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
