@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebAPII.Data;
 
 namespace WebAPII
 {
@@ -17,6 +18,9 @@ namespace WebAPII
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //ToDo: 5 - Adiciona o serviço para trabalhar com o DbContext
+            services.AddDbContext<AppDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
