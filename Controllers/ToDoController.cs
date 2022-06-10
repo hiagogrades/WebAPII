@@ -74,7 +74,7 @@ namespace WebAPII.Controllers
             }
         }
 
-        [HttpPut(template: "todos/{id}")]
+        [HttpPut(template: "ToDos/{id}")]
         public async Task<IActionResult> PutAsync(
             [FromServices] AppDbContext context,
             [FromBody] CreateToDoViewModel modelToDo,
@@ -102,6 +102,28 @@ namespace WebAPII.Controllers
             {
 
                 throw;
+            }
+        }
+
+        [HttpDelete(template: "ToDos/{id}")]
+        public async Task<ActionResult> DeleteAsync(
+            [FromServices] AppDbContext context,
+            [FromRoute] int id)
+        {
+            var toDo = await context
+            .ToDos
+            .FirstOrDefaultAsync(x => x.Id == id);
+
+            try
+            {
+                context.ToDos.Remove(toDo);
+                await context.SaveChangesAsync();
+
+                return Ok($"Item com Id = {id}, deletado com sucesso!");
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
             }
 
         }
