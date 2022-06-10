@@ -72,7 +72,40 @@ namespace WebAPII.Controllers
             {
                 return BadRequest();
             }
+        }
+
+        [HttpPut(template: "todos/{id}")]
+        public async Task<IActionResult> PutAsync(
+            [FromServices] AppDbContext context,
+            [FromBody] CreateToDoViewModel modelToDo,
+            [FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            //Retornando a informação do banco                (Em ToDo, Pega o Id == id ou retorna null, passado na requisição)  
+            var toDo = await context.ToDos.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (toDo == null)
+                return NotFound();
+
+            try
+            {
+                //Realizando Update no EF
+                toDo.Title = modelToDo.Title;
+
+                context.ToDos.Update(toDo);
+                await context.SaveChangesAsync();
+                return Ok(toDo);
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
 
         }
+
+
     }
 }
